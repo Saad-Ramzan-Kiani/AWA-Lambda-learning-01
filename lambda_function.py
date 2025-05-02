@@ -5,7 +5,6 @@ import io
 def lambda_handler(event, context):
     s3 = boto3.client('s3')
 
-    # For manual testing (if 'Records' doesn't exist)
     if 'Records' in event:
         source_bucket = event['Records'][0]['s3']['bucket']['name']
         source_key = event['Records'][0]['s3']['object']['key']
